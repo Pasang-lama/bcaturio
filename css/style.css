@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body {
+  font-family: "Montserrat", serif;
+  font-size: 16px;
+  color: #333333;
+  line-height: 24px;
+}
+
+.custom-button {
+  background-color: #54A15D;
+  color: white;
+  padding: 10px 20px;
+  font-weight: 500;
+  border: 1px solid #54A15D;
+  transition-property: background;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  display: inline-block;
+  white-space: nowrap;
+}
+.custom-button:hover {
+  background-color: transparent;
+  color: #54A15D;
+}
+
+.container {
+  width: 1320px;
+  margin-inline: auto;
+}
+
+.section-header {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.section-header div {
+  max-width: 60%;
+}
+.section-header .section-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.tour-card {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 1px gray;
+  overflow: hidden;
+}
+.tour-card img {
+  height: 250px;
+}
+.tour-card .tour-details {
+  background-color: white;
+  padding: 20px;
+  position: relative;
+}
+.tour-card .tour-details .duration {
+  background-color: white;
+  box-shadow: 0px 1px 3px gray;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+  margin-top: -50px;
+  position: relative;
+  z-index: 2;
+}
+.tour-card .tour-details .duration:hover {
+  background-color: #54A15D;
+  color: white;
+}
+.tour-card .tour-details .wrapper {
+  position: relative;
+  z-index: 2;
+}
+.tour-card .tour-details::before {
+  content: "";
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 128, 0, 0.151);
+  transition: 0.5s;
+}
+.tour-card .tour-details .book-price {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+.tour-card .tour-details .book-price .custom-button {
+  border-radius: 40px;
+  background-color: transparent;
+  border: 1px solid #54A15D;
+  color: #54A15D;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.tour-card .tour-details .book-price .custom-button i {
+  font-size: 10px;
+  transition: 0.4s;
+}
+.tour-card .tour-details .book-price .custom-button:hover {
+  background-color: #54A15D;
+  color: white;
+}
+.tour-card .tour-details .book-price .custom-button:hover i {
+  transform: translateX(10px);
+}
+.tour-card .tour-details .book-price .price-wrapper {
+  font-size: 14px;
+}
+.tour-card .tour-details .book-price .price-wrapper span {
+  font-size: 18px;
+  color: #54A15D;
+  font-weight: 600;
+}
+.tour-card .tour-details .book-price .price-wrapper .price {
+  color: rgb(71, 71, 71);
+}
+.tour-card:hover .tour-details::before {
+  height: 100%;
+  width: 100%;
+}
+
+.margin-top {
+  margin-top: 80px;
+}
+
+.destination-item {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.destination-item .destination-img img {
+  width: 100%;
+  height: 320px;
+  transition: all 0.6s ease-in-out;
+}
+.destination-item .destination-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(179.97deg, rgba(32, 32, 32, 0) 20.42%, #202020 99.97%);
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+}
+.destination-item .destination-overlay .content {
+  padding: 30px;
+  transform: translateY(30px);
+  transition: all 0.5s ease-in-out;
+}
+.destination-item .destination-overlay .content h5 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+  transition: all 0.5s ease-in-out;
+}
+.destination-item .destination-overlay .content h6 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+.destination-item .destination-overlay .content h6::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--c-primary);
+  transition: all 0.5s ease;
+  border-radius: 5px;
+}
+.destination-item .destination-overlay .content:hover h6::after {
+  width: 100%;
+}
+.destination-item:hover .destination-img img {
+  transform: scale(1.2);
+}
+.destination-item:hover .destination-overlay .content {
+  transform: translateY(0px);
+}
+.destination-item:hover .destination-overlay .content h6 {
+  opacity: 1;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.5529411765);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0px 50px;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+}
+header nav ul {
+  display: flex;
+  gap: 50px;
+}
+header nav ul li {
+  font-family: "Montserrat", serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-block: 30px;
+}
+header nav ul li i {
+  color: #54A15D;
+  font-size: 14px;
+  transition: 0.5s;
+  margin-left: 10px;
+}
+header nav ul li:hover i {
+  transform: rotate(360deg);
+  transform-origin: center;
+}
+header .right-content {
+  display: flex;
+  gap: 50px;
+  justify-content: start;
+  align-items: center;
+}
+header .right-content .call {
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+  align-items: center;
+}
+header .right-content .call .details {
+  font-family: "Montserrat", serif;
+  text-transform: uppercase;
+}
+header .right-content .call .details a {
+  display: block;
+}
+header .right-content button {
+  background-color: transparent;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  transition: all 0.3s linear;
+}
+header .right-content button:hover {
+  background-color: #54A15D;
+}
+header .right-content button img {
+  height: 20px;
+  aspect-ratio: 1;
+  width: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.banner .slider-items {
+  background-color: black;
+}
+.banner .slider-items img {
+  opacity: 0.7;
+}
+.banner .slider-items .banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+.banner .slider-items .banner-content .tagline {
+  font-size: 30px;
+  font-family: "Montserrat", serif;
+}
+.banner .slider-items .banner-content .banner-heading {
+  font-family: "Barlow", serif;
+  font-size: 56px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+.banner .slider-items .banner-content .custom-button {
+  margin-top: 20px;
+}
+
+.best-selling-tour .tour-card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}/*# sourceMappingURL=style.css.map */

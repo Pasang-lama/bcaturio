@@ -1,0 +1,6 @@
+@mixin d-flex($gap: 50px, $justify-content: start){
+    display: flex;
+    gap:$gap;
+    justify-content: $justify-content;
+    align-items: center;
+}
